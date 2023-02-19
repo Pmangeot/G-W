@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+        <nav class="mainnav">
+            <label> Trier par :
+                <select id="viewselect">
+                    <option value="series" selected>Series</option>
+                    <option value="date">Dates de sortie</option>
+                    <option value="rarete">Rarete</option>
+                </select>
+            </label>
+        </nav>
+
+        <ul class="layout_large" role="list">
+            <% gwlist.forEach(GW => {%>
+                <a href="/<%=GW.name%>/">
+                <li role="listitem" class="GW_card <%=GW.series%>">
+                    <img src="/img/<%=GW.id%> front-1.png" alt="Jeu <%=GW.name%>">
+                    <h2><%=GW.name%></h2>
+
+                </li>
+                </a>
+            <% }); %>
+        </ul>
+    </main>
+</body>
+</html>

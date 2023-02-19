@@ -1,0 +1,24 @@
+{
+  "name": "g-w",
+  "version": "1.0.0",
+  "description": "Game and Watch collection and repair guide website, should be build to be open to other like discogs eventually",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pmangeot/G-W.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pmangeot/G-W/issues"
+  },
+  "homepage": "https://github.com/Pmangeot/G-W#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
