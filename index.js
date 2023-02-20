@@ -18,17 +18,15 @@ app.get('/collection', (req, res)=>{
     res.render('collection');
 });
 
-app.get('/film/:idDuFilm', (req, res)=>{
+app.get('/modele/:modelName', (req, res)=>{
 
-    const idDuFilm = req.params.idDuFilm;
-    console.log(idDuFilm)
+    const modelName = req.params.modelName;
 
-    const foundFilm = filmographie.find((film)=>{
-        return film.id == idDuFilm;
+    const foundModel = gwlist.find((model)=>{
+        return model.name == modelName;
     });
-    console.log(foundFilm);
-    if(foundFilm !== undefined){
-        res.render('film', {foundFilm});
+    if(foundModel !== undefined){
+        res.render('modele', {foundModel});
     }
 });
 

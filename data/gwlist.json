@@ -68,6 +68,23 @@
         "defaults": "",
         "restoration": ""
     },  {
+        "id": "MC-25",
+        "name": "Mickey Mouse",
+        "releasedate": "09/10/1981",
+        "acronym": "PiCkey",
+        "quantities": "1.000.000",
+        "madein": "Japan",
+        "series": "Widescreen",
+        "gameplay": "",
+        "playernumber": "1",
+        "modes": "Game A et Game B",
+        "secondemode": "",
+        "details": "",
+        "etat": "",
+        "box": false,
+        "defaults": "",
+        "restoration": ""
+    },  {
         "id": "FR-27",
         "name": "Fire",
         "releasedate": "04/12/1981",

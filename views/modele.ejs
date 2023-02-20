@@ -1,7 +1,20 @@
 <%- include('partials/header') %>
-
-        <div id="enter">
-            <a id="enter-Btn" href="/listing">ENTREZ ICI</a>
+        <div class="modele_page">
+            <div class="unit_photos">
+            <img src="/img/<%=foundModel.id%> front-1.png" alt="Face avant du jeu <%=foundModel.name%>">
+            <% if(foundModel.series == 'MultiScreen' || foundModel.series == 'MultiScreen_book'){ %>
+                <img src="/img/<%=foundModel.id%> inside-1.png" alt="Interieur du jeu <%=foundModel.name%>">
+                <% } %>
+                <img src="/img/<%=foundModel.id%> back-1.png" alt="Face arriere du jeu <%=foundModel.name%>">
+            </div>
+            <div class="unit_description">
+                <h2><%=foundModel.name%></h2>
+                <div class="details">
+                    <p><%=foundModel.releasedate%></p>
+                    <p><%=foundModel.id%></p>
+                    <p><%=foundModel.series%></p>
+                </div>
+            </div>
         </div>
     </main>
 </body>

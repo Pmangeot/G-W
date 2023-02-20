@@ -46,10 +46,11 @@ h1{
 /* 404 de base*/
 .error{
     text-align: center;
+    padding: 2rem;
 }
 
 .error img{
-    padding: 6rem;
+    padding: 2rem;
 }
 
 
@@ -71,6 +72,38 @@ h1{
     margin: auto;
 }
 
+/* modele details page */
+
+.modele_page{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.unit_photos{
+    width: 23vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.unit_description{
+    width: 50vw;
+
+}
+.unit_description h2{
+    text-align: center;
+
+}
+
+.details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    color: var(--main-title-color);
+    justify-content: space-between;
+}
+
+
 
 /* main pour la collection en images larges */
 
@@ -87,7 +120,6 @@ h1{
     flex-wrap: wrap;
     list-style: none;
     width: 24rem;
-    height: 24rem;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -105,17 +137,17 @@ h2{
 }
 .Silver img{
     height:12rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 .Widescreen img{   
     height:13rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 .MultiScreen img{
     height: 13rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 .MultiScreen_book img{
     height: 19rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
