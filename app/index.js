@@ -1,17 +1,24 @@
 const express = require("express");
 const app = express();
+
 const gwlist = require('./data/gwlist.json');
-const port = 3030;
+
+require('dotenv').config();
+const PORT = process.env.PORT;
+
+const routers = require('./routers');
+
+
 
 app.set('view engine', 'ejs');
-app.set('views', 'views');
+app.set('views', './app/views');
 
 app.use(express.static('public'));
 
 app.locals.gwlist = gwlist;
 
 app.get('/', (req, res)=>{
-    res.render('index');
+    res.render('accueil');
 });
 
 app.get('/collection', (req, res)=>{
@@ -34,6 +41,6 @@ app.use((req, res, next) => {
     res.status(404).render('erreur');
 });
 
-app.listen(port, ()=>{
-    console.log(`Serveur lancé sur http://localhost:${port}`);
+app.listen(PORT, ()=>{
+    console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
