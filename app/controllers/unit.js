@@ -1,4 +1,7 @@
+const gwlist = require('../data/gwlist.json');
+
 const controller = {
+    
     details: (req, res) =>{
         const modelName = req.params.modelName;
 
