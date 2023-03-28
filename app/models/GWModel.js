@@ -1,13 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');
 
-class GWModel {};
+class GWModel extends Sequelize.Model {}
 
 GWModel.init({ 
 
     id:{
         type:DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
     },
     name:{
         type:DataTypes.STRING,
@@ -52,7 +53,8 @@ GWModel.init({
 }, {
 
     sequelize,
-    tableName: "gwModel"
+    tableName: "gwModel",
+    timestamps: false
 });
 
-module.exports = Product;
+module.exports = GWModel;

@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../database');
 const User = require('./User.js');
-const User = require('./User.js');
+const GWModel = require('./User.js');
 
 class Specimen extends Sequelize.Model {}
 
@@ -19,7 +19,7 @@ Specimen.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        condition: {
+        condition_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
         },
@@ -46,9 +46,9 @@ Specimen.init(
     },
     {
         sequelize,
-        tableName: 'users',
+        tableName: 'specimen',
     }
 );
 
 
-module.exports = User;
+module.exports = Specimen;

@@ -2,25 +2,37 @@
 
         <nav class="collectionnav">
             <label> Trier par :
-                <select id="viewselect">
-                    <option value="series" selected>Series</option>
+                <select id="viewselect" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                    <option value="rarete">Choisis ici</option>                   
+                    <option value="series">Serie</option>
                     <option value="date">Dates de sortie</option>
                     <option value="rarete">Rarete</option>
                 </select>
             </label>
         </nav>
+        <% collectionData.forEach(item => { %>
+            <div class="category">
+                <h2><%=item.name.replace("_", " ")%>
+                    <% if (item.owned === item.total){%><%= ' -> FULL SET ! (*^‿^*)'%> <%}%>
+                </h2> 
+                <p>Possede <%= item.owned %> modele sur <%= item.total %> </p>
+            </div>
+            <div class="layout_large" role="list">
+                <% item.models.forEach(model => { %>
+                    <a href="/modele/<%=model.id%>/">
+                    <div role="listitem" class="GW_card <%=model.series%>">
+                        <%if (model.specimens.length > 0 ){%>
+                        <img src="/img/front-<%=model.specimens[0].id%>.png" alt="Jeu <%=model.name%>">
+                        <% } else { %>
+                            <p class="missing missing_<%=model.series%>"><%=model.id%></p>
+                        <% } %>
+                        <h2><%=model.name%></h2>
+                    </div>
+                    </a>
+                <% }); %>
+            </div>
+        <% }); %>
 
-        <ul class="layout_large" role="list">
-            <% gwlist.forEach(GW => {%>
-                <a href="/modele/<%=GW.name%>/">
-                <li role="listitem" class="GW_card <%=GW.series%>">
-                    <img src="/img/<%=GW.id%> front-1.png" alt="Jeu <%=GW.name%>">
-                    <h2><%=GW.name%></h2>
-
-                </li>
-                </a>
-            <% }); %>
-        </ul>
     </main>
 </body>
 </html>

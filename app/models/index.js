@@ -23,7 +23,7 @@ Specimen.belongsTo(User,{
 });
 
 Condition.hasMany(Specimen, {
-    foreignKey: "model_id",
+    foreignKey: "condition_id",
     as : "specimens",
 });
 Specimen.belongsTo(Condition,{
@@ -32,7 +32,7 @@ Specimen.belongsTo(Condition,{
 });
 
 Role.hasMany(User, {
-    foreignKey: 'condition_id',
+    foreignKey: 'role_id',
     as: 'users',
 });
 

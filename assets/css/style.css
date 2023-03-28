@@ -1,5 +1,5 @@
 :root{
-    --main-bg-color:rgba(80, 80, 80, 0.205);
+    --main-bg-color:rgba(118, 118, 118, 0.205);
     --main-title-color:rgb(109, 6, 20);
 }
 
@@ -21,7 +21,6 @@ header{
     height: 12rem;
 }
 .titleLogo{
-    padding-left: 1rem;
     height: 6rem;
 }
 .siteTitle{    
@@ -30,8 +29,11 @@ header{
     align-items:center;
 }
 
+.siteTitleText{
+    padding-left: 1rem;
+}
+
 h1{
-    margin-left: 40px;
     font-size: 3rem;
     font-weight: 600;
     color: var(--main-title-color);
@@ -93,10 +95,11 @@ h1{
     width: 23vw;
     display: flex;
     flex-direction: column;
+    text-align: center;
     padding: 1rem;
     gap: 1rem;
     border-top: 2px var(--main-title-color) solid;
-    border-left: 2px var(--main-title-color) solid;
+    border-right: 2px var(--main-title-color) solid;
     border-bottom: 2px var(--main-title-color) solid;
 }
 
@@ -137,16 +140,20 @@ h1{
 
 
 .layout_large{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 3rem;
-    row-gap: 1rem;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-column-gap: 10px;
+    grid-auto-flow: rows;
+    margin-left: 3rem;
 }
+
+.category{
+    margin: 1.3rem 5rem;
+}
+
 .GW_card{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     list-style: none;
     width: 24rem;
     align-items: center;
@@ -164,7 +171,20 @@ h2{
     font-weight: 600;
     color: var(--main-title-color);
 }
-.Silver img{
+
+.missing{
+    width: 18rem;
+    color: white;
+    background-color: lightgrey;
+    line-height: 12rem;
+    border-radius: 10px;
+    min-height: 12rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.Silver img, .Gold img{
     height:12rem;
     margin-bottom: 0.5rem;
 }
@@ -172,11 +192,19 @@ h2{
     height:13rem;
     margin-bottom: 0.5rem;
 }
-.MultiScreen img{
+.New_widescreen img{   
+    height:13rem;
+    margin-bottom: 0.5rem;
+}
+.Reedition img{   
+    height:13rem;
+    margin-bottom: 0.5rem;
+}
+.Multiscreen img{
     height: 13rem;
     margin-bottom: 0.5rem;
 }
-.MultiScreen_book img{
+.Multiscreen_book img{
     height: 19rem;
     margin-bottom: 0.5rem;
 }

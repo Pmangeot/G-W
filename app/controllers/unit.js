@@ -1,16 +1,16 @@
-const gwlist = require('../data/gwlist.json');
-
+//const gwlist = require('../data/gwlist.json');
+const { Specimen, GWModel } = require("../models");
 const controller = {
     
-    details: (req, res) =>{
-        const modelName = req.params.modelName;
+    details: async (req, res) =>{
+        const modelId = req.params.modelId;
 
-        const foundModel = gwlist.find((model)=>{
-            return model.name == modelName;
+        const foundModel = await GWModel.findOne({
+            where:{id : `${modelId}`},
+            include : ['specimens'],
         });
-        if(foundModel !== undefined){
-            res.render('modele', {foundModel});
-        }
+        console.log(foundModel);
+        res.render('modele', {foundModel});
     }
 }
 

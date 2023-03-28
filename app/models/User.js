@@ -37,10 +37,9 @@ User.init(
     },
     {
         sequelize,
-        tableName: 'users',
+        tableName: 'user',
     }
 );
 
-//User.belongsTo(Role(), { foreignKey: 'role_id' });
 
 module.exports = User;

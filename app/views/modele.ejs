@@ -1,19 +1,31 @@
 <%- include('partials/header') %>
         <div class="modele_page">
-            <div class="unit_photos">
-            <img src="/img/<%=foundModel.id%> front-1.png" alt="Face avant du jeu <%=foundModel.name%>">
-            <% if(foundModel.series == 'MultiScreen' || foundModel.series == 'MultiScreen_book'){ %>
-                <img src="/img/<%=foundModel.id%> inside-1.png" alt="Interieur du jeu <%=foundModel.name%>">
-                <% } %>
-                <img src="/img/<%=foundModel.id%> back-1.png" alt="Face arriere du jeu <%=foundModel.name%>">
-            </div>
             <div class="unit_description">
                 <h2><%=foundModel.name%></h2>
                 <div class="details">
-                    <p><%=foundModel.releasedate%></p>
-                    <p><%=foundModel.id%></p>
-                    <p><%=foundModel.series%></p>
+                    <p>Date de sortie :<%=foundModel.releasedate%></p>
+                    <p>Reference :<%=foundModel.id%></p>
+                    <p>Serie :<%=foundModel.series%></p>
                 </div>
+                <div class="details">
+                    <p>Acronyme :<%=foundModel.acronym%></p>
+                    <p> Variations :<%=foundModel.variation%></p>
+                    <p>Rarete :<%=foundModel.scarcity%>/5</p>
+                </div>
+                <p><%=foundModel.history%></p>
+                <p><%=foundModel.gameplay%></p>
+                <p><%=foundModel.secondmode%></p>
+                <p><%=foundModel.details%></p>
+            </div>
+            <div class="unit_photos">
+                <h2>Vous avez <%=foundModel.specimens.length%> exemplaire<%if(foundModel.specimens.length > 1){%>s<%}%></h2>
+                <%if (foundModel.specimens.length > 0){%>
+                    <% foundModel.specimens.forEach (specimen => { %>
+                    <img src="/img/front-<%=specimen.id%>.png" alt="Face avant du jeu n <%=specimen.id%>">
+                    <% }); %>
+                <% } else { %>
+                    <p class="missing missing_<%=foundModel.series%>"><%=foundModel.id%></p>
+                <% } %>
             </div>
         </div>
     </main>
