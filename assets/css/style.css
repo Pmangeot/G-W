@@ -96,6 +96,7 @@ h1{
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
     padding: 1rem;
     gap: 1rem;
     border-top: 2px var(--main-title-color) solid;
@@ -121,6 +122,8 @@ h1{
     color: var(--main-title-color);
     justify-content: center;
     gap: 0.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -182,6 +185,10 @@ h2{
     margin-bottom: 1rem;
     font-size: 2rem;
     text-align: center;
+}
+
+.unit_photos .missing{
+    margin:auto;
 }
 
 .Silver img, .Gold img{
