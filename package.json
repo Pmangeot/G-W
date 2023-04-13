@@ -4,7 +4,10 @@
   "description": "Game and Watch collection and repair guide website, should be build to be open to other like discogs eventually",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app/index.js",
+    "start": "node app/index.js",
+    "db:reset": "psql -U gwadmin -d gw -f ./qpp/data/db-gw.sql",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
