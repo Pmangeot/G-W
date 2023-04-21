@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app/index.js",
     "start": "node app/index.js",
-    "db:reset": "psql -U gwadmin -d gw -f ./qpp/data/db-gw.sql",
+    "db:reset": "psql -U gwadmin -d gw -f ./app/data/db-gw.sql",
     "build": "vite build"
   },
   "repository": {

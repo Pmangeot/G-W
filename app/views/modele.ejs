@@ -23,9 +23,9 @@
                     <% foundModel.specimens.forEach (specimen => { %>
                     <img src="/img/front-<%=specimen.id%>.png" alt="Face avant du jeu n <%=specimen.id%>">
                     <% }); %>
-                <% } else { %>
-                    <p class="missing missing_<%=foundModel.series%>"><%=foundModel.id%></p>
                 <% } %>
+                    <p class="missing missing_<%=foundModel.series%>">Stick one </br> <%=foundModel.id%></p>
+
             </div>
         </div>
     </main>

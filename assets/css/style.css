@@ -179,12 +179,13 @@ h2{
     width: 18rem;
     color: white;
     background-color: lightgrey;
-    line-height: 12rem;
+    height: 12rem;
     border-radius: 10px;
     min-height: 12rem;
     margin-bottom: 1rem;
     font-size: 2rem;
-    text-align: center;
+    display: grid;
+    place-items: center;
 }
 
 .unit_photos .missing{

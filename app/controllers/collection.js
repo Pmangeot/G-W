@@ -3,12 +3,19 @@
 const { Sequelize } = require("sequelize");
 const { Specimen, GWModel } = require("../models");
 
-const dataSerieRefactor = (main) => {
+const dataRefactor = (main, categoryType) => {
     const data = [];
     // on itere sur tous les modeles
     for (let i = 0; i< main.length; i++){
+        let modelCategory = '';
+        if (categoryType == "serie"){
         // on recupere la category de l'objet en cours
-        const modelCategory = Object.values(main)[i].series;
+        modelCategory = Object.values(main)[i].series;
+        } ;
+        if (categoryType == "year"){
+        modelCategory = Object.values(main)[i].releasedate.substring(0,4);
+        };
+
         // on test si un object ayant comme attribut cette category existe deja dans notre tableau et on cree si false
         if (!data.find(item => item.name === modelCategory)) {
             const newCategory = { name: `${modelCategory}`, owned: 0, total: 0, models:[]};
@@ -38,7 +45,8 @@ const controller = {
         include : ['specimens'],
         order: [['releasedate', 'ASC']]
     });
-    const collectionData = dataSerieRefactor(rawCollectionData);
+    const categoryType = "serie";
+    const collectionData = dataRefactor(rawCollectionData, categoryType);
         res.render('collection', {collectionData});
     },
 
@@ -47,12 +55,14 @@ const controller = {
             attributes : [
                 'id',
                 'name',
+                'series',
                 'releasedate'
             ],
             include : ['specimens'],
             order: [['releasedate', 'ASC']]
         });
-        const collectionData = dataDateRefactor(rawCollectionData);
+        const categoryType = "year";
+        const collectionData = dataRefactor(rawCollectionData, categoryType);
             res.render('collection', {collectionData});
     }
 }
